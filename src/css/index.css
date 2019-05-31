@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+* a {
+  text-decoration: none;
+  color: #343434;
+}
+
+* a:hover {
+  color: #FF3300;
+}
+
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 2em auto;
+  z-index: 10;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  padding: 0.5em;
+  background-color: #ffffff;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+#brand {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #343434;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.3em;
+}
+
+#brand:hover #brandOne, #brand #brandTwo {
+  color: #FF3300;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#brand:hover #brandTwo {
+  color: #343434;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.authButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.authButtons button {
+  position: relative;
+  padding: 0.3em 1.2em;
+  margin: 0.2em 0;
+  border: 0.1em solid #343434;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 2em;
+  color: #FF3300;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.authButtons button:hover {
+  border-color: #FF3300;
+  color: #343434;
+}
+
+.authButtons button {
+  margin: 0 0.3em;
+}
+
+.searchForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.3em 0 0.3em 0.3em;
+  width: 200px;
+  border: 1px solid #ffffff;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.searchForm * {
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.searchForm:hover {
+  border: 1px solid #FF3300;
+}
+
+.searchForm button {
+  position: absolute;
+  left: 13px;
+  padding: 0.3em;
+  border: 0.1em solid transparent;
+  width: 55px;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: #8e8e8e;
+  text-align: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.searchForm i {
+  position: absolute;
+  color: #8e8e8e;
+}
+
+.searchForm #searchInput {
+  padding-left: 0.1em;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.focusControl:focus-within {
+  border: 0.1em solid #FF3300;
+  border-radius: 5px;
+  margin: 0 0.5em;
+  -webkit-box-shadow: 1px 1px 1px 0px #ff3300;
+  box-shadow: 1px 1px 1px 0px #ff3300;
+}
+
+.focusControl:focus-within button {
+  background-color: #FF3300;
+  color: #ffffff;
+  border-color: #FF3300;
+  border-radius: 5px;
+  left: calc(200px + 0.3em);
+}
+
+.focusControl:focus-within i {
+  position: absolute;
+  left: calc(-15px - 0.5em);
+  color: #FF3300;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  margin: 2em auto;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+#feedWrap, #widgetsWrap {
+  height: 100%;
+  margin: 0 1em;
+}
+
+#feedWrap {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+#widgetsWrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#feedControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 100%;
+  padding: 0 2em;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+#feedControl > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+#feedOptions > button {
+  position: relative;
+  padding: 0.3em;
+  border: 0.3em solid #ffffff;
+  background-color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#feedOptions > button:hover {
+  color: #FF3300;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#feedOptions .active {
+  color: #FF3300;
+  border-bottom: 0.3em solid #FF3300;
+  margin-bottom: 0.2em;
+}
+
+.searchResult {
+  margin: 1em 0;
+  width: 100%;
+  display: block;
+  line-height: 2em;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  background-color: #37a5ff;
+}
+
+.searchResult > u {
+  font-size: 1em;
+}
+
+#feedContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+}
+
+#feedContent > article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  max-width: 40%;
+  min-width: 370px;
+  margin: 1em;
+  padding: 1em 1em 0 1em;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 2px 0px #8e8e8e;
+  box-shadow: 1px 1px 2px 0px #8e8e8e;
+}
+
+#feedContent > article > span {
+  display: block;
+  text-align: end;
+  border-bottom: solid 1px #FF3300;
+  margin-bottom: 0.5em;
+  color: #FF3300;
+}
+
+#feedContent > article > div {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#feedContent > article > div > div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100px;
+  min-width: 100px;
+  max-height: 100px;
+  margin-right: 1em;
+}
+
+#feedContent > article > div > div:first-child > img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+#feedContent > article > div > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  position: relative;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#feedContent > article > div > div:last-child > p {
+  text-overflow: ellipsis;
+  margin-top: 0.5em;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+#feedContent > article > div > div:last-child > a {
+  bottom: 0;
+  width: 100%;
+  padding: 0.25em;
+  color: blue;
+  background-size: 200px 1px;
+  margin-top: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+#feedContent > article > div > div:last-child > a:hover {
+  color: #FF3300;
+  background-color: rgba(172, 255, 47, 0.336);
+}
+
+#exchangeWrap form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#exchangeOutput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#exchangeOutput > p {
+  display: inline;
+  margin: 0.5em 0;
+}
+
+#exchangeOutput > p > input {
+  width: 5em;
+}
+
+#dropdownWrap {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  padding: 1em;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.dropdown > * {
+  width: 100%;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0.5em;
+}
+
+.show {
+  display: block;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  background-color: #ffffff;
+}
+
+footer * {
+  font-family: "PT Sans", sans-serif;
+  color: #8e8e8e;
+}
+
+footer > div:nth-child(2) > a:first-child {
+  margin: 1em;
+}
+
+@media only screen and (max-width: 1400px) {
+  main {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #feedWrap {
+    margin-bottom: 2em;
+    min-width: calc(100%-2em);
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  #feedContent > article {
+    width: 80%;
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #feedContent > article {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  #brand::after, #brand::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0d7";
+    margin: 0 1em;
+    color: #FF3300;
+  }
+  header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header > * {
+    margin-bottom: 1em;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  #feedWrap {
+    margin: auto;
+  }
+  #feedControl {
+    border-radius: 0;
+  }
+  #feedWrap article {
+    margin: 1em auto;
+    border-radius: 0;
+  }
+  #feedWrap article > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #feedWrap article > div > div:first-child {
+    display: block;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+  }
+  #feedWrap article > div > div:first-child > img {
+    max-height: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */

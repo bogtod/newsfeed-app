@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    margin: 2em auto;
+    flex-grow: 2;
+}
+
+
+#feedWrap, #widgetsWrap {
+    height: 100%;
+    margin: 0 1em;
+    // width: 50%;
+    // border: 1px solid black;
+}
+
+#feedWrap {
+    flex: 2;
+}
+
+#widgetsWrap {
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
